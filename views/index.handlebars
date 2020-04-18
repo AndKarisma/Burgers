@@ -1,0 +1,52 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="burger-image">
+ <div class="burger-text">
+<div class="jumbotron">
+<div class="display-4 text-center">
+ <image src="../assets/img/hamburger.png" alt="Burger" width="300" height="200"</image>
+<h1>Burgers!</h1>
+</div>
+
+</div>
+
+
+<h2>Available Burgers</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+     
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+<h2>Devoured Burgers!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="devoured"></label><br>
+    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="devoured" value="0"> Burger
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
+</div>
+</div>
